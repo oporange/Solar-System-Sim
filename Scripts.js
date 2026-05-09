@@ -84,7 +84,7 @@ function drawSolarSystem(){
     ctx.fill();
 
     //draw planet function calls
-    DrawPlanet(70, 6, 0.24, "yellow", "Mercury");  //Mercury
+    DrawPlanet(60, 6, 0.24, "yellow", "Mercury");  //Mercury
     DrawPlanet(74, 7, 0.61, "orange", "Venus"); //Venus
     DrawEarthMoon(98, 8, 1, "blue", "Earth"); //Earth
     DrawPlanet(115, 6, 1.88, "red", "Mars"); //Mars
