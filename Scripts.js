@@ -2,7 +2,8 @@
 var canvas = document.getElementById("SolarSystemSim");
 var ctx = canvas.getContext("2d");
 
-var ScreenSize = 1000; // size of canvas, used for scaling planet distances and sizes
+var ScreenSize = 900; // size of canvas, used for scaling planet distances and sizes
+var PlanetScale = ScreenSize / 1000; // scale for planet sizes
 
 //mouse coordinates variables
 let MouseX = 0;
@@ -79,19 +80,19 @@ function drawSolarSystem(){
 
     //  the sun
     ctx.beginPath();
-    ctx.arc(ScreenSize / 2, ScreenSize / 2, 50, 0, 2 * Math.PI);
+    ctx.arc(ScreenSize / 2, ScreenSize / 2, 50 * PlanetScale, 0, 2 * Math.PI);
     ctx.fillStyle = "yellow";
     ctx.fill();
 
     //draw planet function calls
-    DrawPlanet(60, 6, 0.24, "yellow", "Mercury");  //Mercury
-    DrawPlanet(74, 7, 0.61, "orange", "Venus"); //Venus
-    DrawEarthMoon(98, 8, 1, "blue", "Earth"); //Earth
-    DrawPlanet(115, 6, 1.88, "red", "Mars"); //Mars
-    DrawPlanet(135, 9, 11.8, "brown", "Jupiter"); //Jupiter
-    DrawPlanet(174, 8, 29.4, "orange", "Saturn"); //Saturn
-    DrawPlanet(303, 7, 84, "lightblue", "Uranus"); //Uranus
-    DrawPlanet(400, 6, 165, "blue", "Neptune"); //Neptune
+    DrawPlanet(60 * PlanetScale, 6 * PlanetScale, 0.24, "yellow", "Mercury");  //Mercury
+    DrawPlanet(74 * PlanetScale, 7 * PlanetScale, 0.61, "orange", "Venus"); //Venus
+    DrawEarthMoon(98 * PlanetScale, 8 * PlanetScale, 1, "blue", "Earth"); //Earth
+    DrawPlanet(115 * PlanetScale, 6 * PlanetScale, 1.88, "red", "Mars"); //Mars
+    DrawPlanet(135 * PlanetScale, 9 * PlanetScale, 11.8, "brown", "Jupiter"); //Jupiter
+    DrawPlanet(174 * PlanetScale, 8 * PlanetScale, 29.4, "orange", "Saturn"); //Saturn
+    DrawPlanet(303 * PlanetScale, 7 * PlanetScale, 84, "lightblue", "Uranus"); //Uranus
+    DrawPlanet(400 * PlanetScale, 6 * PlanetScale, 165, "blue", "Neptune"); //Neptune
 
     // if mouse is hovering over a planet, dont step the simulation
     if (simulate){
